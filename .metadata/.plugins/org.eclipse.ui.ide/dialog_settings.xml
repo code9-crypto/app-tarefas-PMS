@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="org.eclipse.buildship:3.1.9.v20240115-1636"/>
+		<item value="org.eclipse.eclemma.feature:3.1.9.202405260028"/>
+		<item value="org.eclipse.egit:7.0.0.202409031743-r"/>
+		<item value="org.eclipse.emf.common:2.32.0.v20240731-0952"/>
+		<item value="org.eclipse.emf.ecore:2.38.0.v20240721-0802"/>
+		<item value="org.eclipse.epp.mpc:1.11.0.v20240709-1650"/>
+		<item value="org.eclipse.fx.ide.css.feature:3.4.1.201810030906"/>
+		<item value="org.eclipse.help:2.3.1900.v20240903-0240"/>
+		<item value="org.eclipse.jdt:3.19.600.v20240903-0240"/>
+		<item value="org.eclipse.jgit.gpg.bc:7.0.0.202409031743-r"/>
+		<item value="org.eclipse.jgit.http.apache:7.0.0.202409031743-r"/>
+		<item value="org.eclipse.jgit.ssh.apache:7.0.0.202409031743-r"/>
+		<item value="org.eclipse.jgit:7.0.0.202409031743-r"/>
+		<item value="org.eclipse.justj.epp:21.0.0.v20240807-1553"/>
+		<item value="org.eclipse.m2e.feature:2.6.2.20240828-1954"/>
+		<item value="org.eclipse.m2e.logback.feature:2.6.1.20240411-1743"/>
+		<item value="org.eclipse.mylyn.builds.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.commons.activity.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.commons.feature:4.4.0.v20240828-0218"/>
+		<item value="org.eclipse.mylyn.commons.identity.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.commons.notifications.feature:4.4.0.v20240828-0218"/>
+		<item value="org.eclipse.mylyn.commons.repositories.feature:4.4.0.v20240719-0621"/>
+		<item value="org.eclipse.mylyn.context.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.egit.feature:4.4.0.v20240711-1016"/>
+		<item value="org.eclipse.mylyn.git.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.github.feature:6.5.0.v20240711-1016"/>
+		<item value="org.eclipse.mylyn.ide.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.jdt.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.jenkins.feature:4.4.0.v20240708-0640"/>
+		<item value="org.eclipse.mylyn.monitor.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.reviews.feature:4.4.0.v20240828-0218"/>
+		<item value="org.eclipse.mylyn.tasks.feature:4.4.0.v20240828-0218"/>
+		<item value="org.eclipse.mylyn.team.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.versions.feature:4.4.0.v20240617-1534"/>
+		<item value="org.eclipse.mylyn.wikitext.feature:4.4.0.v20240820-2036"/>
+		<item value="org.eclipse.oomph.p2:1.31.0.v20240723-0951"/>
+		<item value="org.eclipse.oomph.setup.core:1.31.0.v20240723-0951"/>
+		<item value="org.eclipse.oomph.setup:1.33.0.v20240826-0747"/>
+		<item value="org.eclipse.platform:4.33.0.v20240903-0618"/>
+		<item value="org.eclipse.rcp:4.33.0.v20240903-0618"/>
+		<item value="org.eclipse.tm.terminal.connector.ssh.feature:11.6.1.202406241230"/>
+		<item value="org.eclipse.tm.terminal.control.feature:11.6.1.202407022003"/>
+		<item value="org.eclipse.tm.terminal.feature:11.6.1.202406241230"/>
+		<item value="org.eclipse.tm.terminal.view.feature:11.6.1.202406241230"/>
+		<item value="org.eclipse.userstorage:1.2.0.v20210517-0327"/>
+		<item value="org.eclipse.wst.xml_ui.feature:3.34.0.v202404170147"/>
+		<item value="org.eclipse.xtend.lib:2.36.0.v20240825-0714"/>
+		<item value="org.eclipse.xtend.sdk:2.36.0.v20240825-0714"/>
+		<item value="org.eclipse.xtext.sdk:2.36.0.v20240825-0714"/>
+		<item value="org.eclipse.xtext.ui:2.36.0.v20240825-0714"/>
+		<item value="org.eclipse.xtext.xbase.lib:2.36.0.v20240825-0714"/>
+		<item value="org.eclipse.xtext.xbase:2.36.0.v20240825-0714"/>
+		<item value="org.eclipse.xtext.xtext.ui.graph:2.36.0.v20240825-0714"/>
+		<item value="org.eclipse.xtext.xtext.ui:2.36.0.v20240825-0714"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item key="TOGGLE_SELECTED" value="false"/>
+		<item key="DIALOG_WIDTH" value="500"/>
+		<item key="DIALOG_HEIGHT" value="389"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\r0697537\Documents\Java\aulas_java\21-acesso_ao_banco\Demo-Select"/>
+			<item value="C:\Users\r0697537\Documents\Java\aulas_java\21-acesso_ao_banco\Demo-Insert"/>
+			<item value="C:\Users\r0697537\Documents\Java\aulas_java\21-acesso_ao_banco\Demo-Praticando"/>
+			<item value="C:\Users\r0697537\projetos_java\padronizacao_apps_pms"/>
+		</list>
+		<section name="SmartImportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="249"/>
+			<item key="DIALOG_Y_ORIGIN" value="8"/>
+			<item key="DIALOG_WIDTH" value="885"/>
+			<item key="DIALOG_HEIGHT" value="629"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+</section>

@@ -1,0 +1,118 @@
+package gui;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import db.DB;
+import gui.utils.Alerts;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+
+public class ViewController {
+	//Para fazer com que o scene builder veja este ID
+	//Deve ser escrito desta forma
+	
+	//Caixas de texto
+	@FXML 
+	private TextField txtTarefa;	
+	@FXML
+	private TextField txtSolicitante;	
+	@FXML
+	private TextField txtDestino;
+	@FXML
+	private TextField txtConsulta;
+	
+	//Botões
+	@FXML
+	private Button btnSalvar;
+	
+	//Labels
+	@FXML
+	private Label lblMensagem;
+	@FXML
+	private Label lblTarefa;
+	@FXML
+	private Label lblSolicitante;
+	@FXML
+	private Label lblDestino;
+	@FXML
+	private Label lblData;
+	
+	//Preparando as variaveis do banco
+	Connection conn = null;
+	PreparedStatement st = null;
+	Statement stt = null;
+	ResultSet rs = null;
+	
+	public void onBtSalvar() {		
+		try {
+			//Iniciando a conexão
+			conn = DB.getConnection();
+			//query do insert atrelado a uma variável
+			String queryInsert = "insert into tarefas (tf_tarefa, tf_solicitante, tf_destino"
+					+ ") values (?,?,?) ";
+			//preparando a query para ser executada
+			st = conn.prepareStatement(queryInsert);
+			//Substuindo as interrogações pelos valores dos campos
+			st.setString(1, txtTarefa.getText());
+			st.setString(2, txtSolicitante.getText());
+			st.setString(3, txtDestino.getText());
+			//executando a query e recebendo a quantidade de linhas afetadas
+			int linhasAfetadas = st.executeUpdate();
+			//caso a quantidade de linhas seja maior que 0, então foi salvo com sucesso
+			//caso não, cairá no else
+			if( linhasAfetadas > 0 ) {
+				txtTarefa.setText("");
+				txtSolicitante.setText("");
+				txtDestino.setText("");
+				lblMensagem.setStyle("-fx-text-fill: green");
+				lblMensagem.setText("Tarefa salva com sucesso");
+			}else {
+				lblMensagem.setStyle("-fx-text-fill: red");
+				lblMensagem.setText("Houve um problema na conexão");
+			}			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DB.closeStatement(st);
+			DB.closeConnection();
+		}
+				
+	}
+	
+	public void onBtConsultar() {
+		if( txtConsulta.getText().equals("") ) {
+			Alerts.showAlert("Informação", null, "Não há nenhum inserido no campo", AlertType.INFORMATION);
+		}else {
+			try {
+				stt = conn.createStatement();
+				String querySelect = "select tf_tarefa, tf_solicitante, tf_destino, tf_data"
+						+ "from tarefas where (tf_tarefa == ? OR tf_solicitante == ?)";
+				st = conn.prepareStatement(querySelect);
+				st.setString(1, txtConsulta.getText());
+				st.setString(2, txtConsulta.getText());
+				rs = stt.executeQuery(querySelect);
+				while( rs.next() ) {
+					lblTarefa.setText(rs.getString("tf_tarefa"));
+					lblSolicitante.setText(rs.getString("tf_solicitante"));
+					lblDestino.setText(rs.getString("tf_destino"));
+					lblData.setText(rs.getString("tf_data"));
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}finally {
+				DB.closeResultSet(rs);
+				DB.closeStatement(st);
+				DB.closeConnection();
+			}
+		}
+	}	
+
+}

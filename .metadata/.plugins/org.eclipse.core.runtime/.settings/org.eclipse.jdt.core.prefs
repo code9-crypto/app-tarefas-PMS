@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=17
+org.eclipse.jdt.core.compiler.compliance=17
+org.eclipse.jdt.core.compiler.release=enabled
+org.eclipse.jdt.core.compiler.source=17
+org.eclipse.jdt.core.userLibrary.JavaFX=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="2">\r\n\t<archive path\="C\:/Users/r0697537/java-libs/javafx-sdk-17.0.10/lib/javafx.base.jar"/>\r\n\t<archive path\="C\:/Users/r0697537/java-libs/javafx-sdk-17.0.10/lib/javafx.controls.jar"/>\r\n\t<archive path\="C\:/Users/r0697537/java-libs/javafx-sdk-17.0.10/lib/javafx.fxml.jar"/>\r\n\t<archive path\="C\:/Users/r0697537/java-libs/javafx-sdk-17.0.10/lib/javafx.graphics.jar"/>\r\n\t<archive path\="C\:/Users/r0697537/java-libs/javafx-sdk-17.0.10/lib/javafx.media.jar"/>\r\n\t<archive path\="C\:/Users/r0697537/java-libs/javafx-sdk-17.0.10/lib/javafx.swing.jar"/>\r\n\t<archive path\="C\:/Users/r0697537/java-libs/javafx-sdk-17.0.10/lib/javafx.web.jar"/>\r\n\t<archive path\="C\:/Users/r0697537/java-libs/javafx-sdk-17.0.10/lib/javafx-swt.jar"/>\r\n</userlibrary>\r\n
+org.eclipse.jdt.core.userLibrary.MySQL\ Connector=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="2">\r\n\t<archive path\="C\:/Users/r0697537/java-libs/jdbc-connectors/mysql-connector-j-8.1.0.jar"/>\r\n</userlibrary>\r\n

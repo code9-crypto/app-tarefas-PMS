@@ -1,0 +1,76 @@
+package gui;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import db.DB;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+
+public class ViewController {
+	//Para fazer com que o scene builder veja este ID
+	//Deve ser escrito desta forma
+	
+	//Caixas de texto
+	@FXML 
+	private TextField txtTarefa;	
+	@FXML
+	private TextField txtSolicitante;	
+	@FXML
+	private TextField txtDestino;
+	
+	//Botões
+	@FXML
+	private Button btnSalvar;
+	
+	//Labels
+	@FXML
+	private Label lblMensagem;
+	@FXML
+	private Label lblTarefa;
+	@FXML
+	private Label lblSolicitante;
+	@FXML
+	private Label lblDestino;
+	
+	
+	public void onBtSalvar() {
+		Connection conn = null;
+		PreparedStatement st = null;
+		try {
+			conn = DB.getConnection();
+			String queryInsert = "insert into tarefas (tf_tarefa, tf_solicitante, tf_destino"
+					+ ") values (?,?,?) ";
+			st = conn.prepareStatement(queryInsert);
+			st.setString(1, txtTarefa.toString());
+			st.setString(2, txtSolicitante.toString());
+			st.setString(3, txtDestino.toString());			
+			int linhasAfetadas = st.executeUpdate();
+			if( linhasAfetadas > 0 ) {
+				txtTarefa.setText("");
+				txtSolicitante.setText("");
+				txtDestino.setText("");
+				lblMensagem.setStyle("-fx-text-fill: green");
+				lblMensagem.setText("Tarefa salva com sucesso");
+			}else {
+				lblMensagem.setStyle("-fx-text-fill: red");
+				lblMensagem.setText("Houve um problema na conexão");
+			}			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DB.closeStatement(st);
+			DB.closeConnection();
+		}
+				
+	}
+	
+	public void onBtConsultar() {
+		
+	}	
+
+}

@@ -1,0 +1,232 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 132120576 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3613), pid=16020, tid=15724
+#
+# JRE version:  (17.0.12+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.12+7-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --module-path=C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib --add-modules=javafx.fxml,javafx.controls -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 --module-path=C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.base.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.controls.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.fxml.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.graphics.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.media.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.swing.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.web.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx-swt.jar;C:\Users\r0697537\java-libs\jdbc-connectors\mysql-connector-j-8.1.0.jar -XX:+ShowCodeDetailsInExceptionMessages application.Main
+
+Host: Intel(R) Core(TM) i5-10500 CPU @ 3.10GHz, 12 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.2546)
+Time: Fri Oct 11 11:13:49 2024 Hora oficial do Brasil elapsed time: 0.026860 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000013108392c50):  JavaThread "Unknown thread" [_thread_in_vm, id=15724, stack(0x00000009a1c00000,0x00000009a1d00000)]
+
+Stack: [0x00000009a1c00000,0x00000009a1d00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x683c59]
+V  [jvm.dll+0x83b83a]
+V  [jvm.dll+0x83d2fe]
+V  [jvm.dll+0x83d963]
+V  [jvm.dll+0x24be5f]
+V  [jvm.dll+0x680a09]
+V  [jvm.dll+0x6754ca]
+V  [jvm.dll+0x30b9fb]
+V  [jvm.dll+0x312ef6]
+V  [jvm.dll+0x3638ee]
+V  [jvm.dll+0x363b2f]
+V  [jvm.dll+0x2e2a7c]
+V  [jvm.dll+0x2e39d4]
+V  [jvm.dll+0x80d0cb]
+V  [jvm.dll+0x371661]
+V  [jvm.dll+0x7eba75]
+V  [jvm.dll+0x3f519f]
+V  [jvm.dll+0x3f6cf1]
+C  [jli.dll+0x532f]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17614]
+C  [ntdll.dll+0x526a1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff8c2e0bfd8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000131083ec870 GCTaskThread "GC Thread#0" [stack: 0x00000009a1d00000,0x00000009a1e00000] [id=15060]
+  0x00000131084008a0 ConcurrentGCThread "G1 Main Marker" [stack: 0x00000009a1e00000,0x00000009a1f00000] [id=16332]
+  0x0000013108401690 ConcurrentGCThread "G1 Conc#0" [stack: 0x00000009a1f00000,0x00000009a2000000] [id=15104]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff8c25c3117]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001310838dfe0] Heap_lock - owner thread: 0x0000013108392c50
+
+Heap address: 0x0000000083800000, size: 1992 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000083800000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff8c29acf29]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.010 Loaded shared library C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff66fc10000 - 0x00007ff66fc1e000 	C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\javaw.exe
+0x00007ff90a0b0000 - 0x00007ff90a2a8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff909600000 - 0x00007ff9096bf000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff907990000 - 0x00007ff907c62000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff9077d0000 - 0x00007ff9078d0000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff900c20000 - 0x00007ff900c39000 	C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\jli.dll
+0x00007ff8f2dd0000 - 0x00007ff8f2deb000 	C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\VCRUNTIME140.dll
+0x00007ff9080f0000 - 0x00007ff908291000 	C:\Windows\System32\USER32.dll
+0x00007ff9077a0000 - 0x00007ff9077c2000 	C:\Windows\System32\win32u.dll
+0x00007ff908390000 - 0x00007ff9083bb000 	C:\Windows\System32\GDI32.dll
+0x00007ff907d90000 - 0x00007ff907e9f000 	C:\Windows\System32\gdi32full.dll
+0x00007ff907ea0000 - 0x00007ff907f3d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff8f5870000 - 0x00007ff8f5b0a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff909040000 - 0x00007ff9090de000 	C:\Windows\System32\msvcrt.dll
+0x00007ff908350000 - 0x00007ff908382000 	C:\Windows\System32\IMM32.DLL
+0x00007ff8f6db0000 - 0x00007ff8f6f0a000 	\\?\vBptgxiMsmmCntmqeaHjpvQvimFaGGZg\GLOBAL??\C:\Windows\system32\tmumh\20019\AddOn\8.55.0.1333\TmUmEvt64.dll
+0x00007ff9096c0000 - 0x00007ff9096c8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ff9088c0000 - 0x00007ff90896e000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff909100000 - 0x00007ff90919c000 	C:\Windows\System32\sechost.dll
+0x00007ff908cd0000 - 0x00007ff908df5000 	C:\Windows\System32\RPCRT4.dll
+0x000000005c860000 - 0x000000005c9de000 	\\?\vBptgxiMsmmCntmqeaHjpvQvimFaGGZg\GLOBAL??\C:\Windows\system32\tmumh\20019\TmMon\2.9.0.1176\tmmon64.dll
+0x00007ff9035c0000 - 0x00007ff9035cc000 	C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\vcruntime140_1.dll
+0x00007ff8ede90000 - 0x00007ff8edf1d000 	C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\msvcp140.dll
+0x00007ff8c22d0000 - 0x00007ff8c2f40000 	C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\server\jvm.dll
+0x00007ff9096d0000 - 0x00007ff90973b000 	C:\Windows\System32\WS2_32.dll
+0x00007ff906d70000 - 0x00007ff906dbb000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ff8f6d80000 - 0x00007ff8f6da7000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff9020f0000 - 0x00007ff9020fa000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff906be0000 - 0x00007ff906bf2000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ff905680000 - 0x00007ff905692000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ff8e7040000 - 0x00007ff8e704a000 	C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\jimage.dll
+0x00007ff8f43e0000 - 0x00007ff8f45c4000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ff8f3d20000 - 0x00007ff8f3d55000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ff907900000 - 0x00007ff907982000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ff8dfdb0000 - 0x00007ff8dfdd5000 	C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;\\?\vBptgxiMsmmCntmqeaHjpvQvimFaGGZg\GLOBAL??\C:\Windows\system32\tmumh\20019\AddOn\8.55.0.1333;\\?\vBptgxiMsmmCntmqeaHjpvQvimFaGGZg\GLOBAL??\C:\Windows\system32\tmumh\20019\TmMon\2.9.0.1176;C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin\server
+
+VM Arguments:
+jvm_args: --module-path=C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib --add-modules=javafx.fxml,javafx.controls -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 --module-path=C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.base.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.controls.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.fxml.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.graphics.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.media.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.swing.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx.web.jar;C:\Users\r0697537\java-libs\javafx-sdk-17.0.10\lib\javafx-swt.jar;C:\Users\r0697537\java-libs\jdbc-connectors\mysql-connector-j-8.1.0.jar -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: application.Main
+java_class_path (initial): C:\Users\r0697537\workspace\appTarefas\bin
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2088763392                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 2088763392                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64
+PATH=C:/Users/r0697537/Downloads/zulu17.52.17-ca-jdk17.0.12-win_x64/bin/server;C:/Users/r0697537/Downloads/zulu17.52.17-ca-jdk17.0.12-win_x64/bin;C:\Users\r0697537\Downloads\zulu17.52.17-ca-jdk17.0.12-win_x64\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\MongoDB\Server\7.0\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Git LFS;C:\Program Files\MongoDB\Server\7.0\bin;C:\xampp\php;C:\Users\r0697537\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\r0697537\AppData\Local\Programs\Python\Python311\;C:\Users\r0697537\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2023.2\bin;;C:\Users\r0697537\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\r0697537\eclipseJAVAFX;
+USERNAME=R0697537
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 165 Stepping 3, GenuineIntel
+TMP=C:\Users\r0697537\AppData\Local\Temp
+TEMP=C:\Users\r0697537\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.2546)
+OS uptime: 0 days 1:15 hours
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 165 stepping 3 microcode 0xec, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt
+Processor Information for all 12 processors :
+  Max Mhz: 3096, Current Mhz: 3096, Mhz Limit: 3096
+
+Memory: 4k page, system-wide physical 7967M (1244M free)
+TotalPageFile size 7967M (AvailPageFile size 24M)
+current process WorkingSet (physical memory assigned to process): 13M, peak: 13M
+current process commit charge ("private bytes"): 67M, peak: 193M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.12+7-LTS) for windows-amd64 JRE (17.0.12+7-LTS) (Zulu17.52+17-CA), built on Jul  9 2024 22:21:07 by "zulu_re" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
