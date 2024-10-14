@@ -45,6 +45,7 @@ public class ViewController implements Initializable {
 	private Button btnSalvar;
 	
 	//Labels
+	@FXML
 	private Label lblMensagem;
 	
 	//Variáveis da tableView
@@ -86,11 +87,11 @@ public class ViewController implements Initializable {
 				txtTarefa.setText("");
 				txtSolicitante.setText("");
 				txtDestino.setText("");
-				lblMensagem.setStyle("-fx-text-fill: green");
 				lblMensagem.setText("Tarefa salva com sucesso");
+				lblMensagem.setStyle("-fx-text-fill: green");				
 			}else {
-				lblMensagem.setStyle("-fx-text-fill: red");
 				lblMensagem.setText("Houve um problema na conexão");
+				lblMensagem.setStyle("-fx-text-fill: red");
 			}			
 		}catch(SQLException e) {
 			e.printStackTrace();
