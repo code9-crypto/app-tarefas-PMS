@@ -8,7 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.DateTimeException;
+import java.time.format.DateTimeParseException;
 import java.util.ResourceBundle;
 
 import classes.Tarefas;
@@ -121,17 +122,17 @@ public class ViewController implements Initializable {
 				ObservableList<Tarefas> listaTarefas = FXCollections.observableArrayList();
 				//Fazendo um loop de repetição para pegar todos os valores e adicionar na ObservableList
 				while( rs.next() ) {
-					//Formatando data que vem do banco de dados
-					Date data = rs.getDate("tf_data");
-					String dataFormatada = sdf.format(data);
-					
-					listaTarefas.add(new Tarefas(rs.getString("tf_tarefa"), rs.getString("tf_solicitante"),rs.getString("tf_destino"),dataFormatada));
+					String data = sdf.parse(rs.getString("tf_data")).toString();
+					listaTarefas.add(new Tarefas(rs.getString("tf_tarefa"), rs.getString("tf_solicitante"),rs.getString("tf_destino"),data));
 				}
 				table.setItems(listaTarefas);
 				txtConsultaCodigo.setText("");
 			}catch(SQLException e) {				
 				e.printStackTrace();
 				System.out.println("Não consegui trazer os dados do bando de dados");
+			}catch(ParseException e) {
+				e.printStackTrace();
+				System.out.println("Houve um erro na hora de converter a data para o padrão correto");
 			}finally {
 				DB.closeResultSet(rs);
 				DB.closeStatement(st);
@@ -150,17 +151,18 @@ public class ViewController implements Initializable {
 				ObservableList<Tarefas> listaTarefas = FXCollections.observableArrayList();
 				//Fazendo um loop de repetição para pegar todos os valores e adicionar na ObservableList
 				while( rs.next() ) {
-					//Formatando data que vem do banco de dados
-					Date data = rs.getDate("tf_data");
-					String dataFormatada = sdf.format(data);
-					
-					listaTarefas.add(new Tarefas(rs.getString("tf_tarefa"), rs.getString("tf_solicitante"),rs.getString("tf_destino"),dataFormatada));
+					//String data = sdf.parse(rs.getString("tf_data")).toString();
+					System.out.println(rs.getString("tf_data").getClass());
+					listaTarefas.add(new Tarefas(rs.getString("tf_tarefa"), rs.getString("tf_solicitante"),rs.getString("tf_destino"),rs.getString("tf_data")));
 				}
 				table.setItems(listaTarefas);
 				txtConsultaNome.setText("");
 			}catch(SQLException e) {
 				e.printStackTrace();
 				System.out.println("Não consegui trazer os dados do bando de dados");
+			}catch(ParseException e) {
+				e.printStackTrace();
+				System.out.println("Houve um erro na hora de converter a data para o padrão correto");
 			}finally {
 				DB.closeResultSet(rs);
 				DB.closeStatement(st);

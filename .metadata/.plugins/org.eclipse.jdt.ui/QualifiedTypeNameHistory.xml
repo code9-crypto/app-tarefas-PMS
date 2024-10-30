@@ -5,7 +5,6 @@
     <fullyQualifiedTypeName name="org.w3c.dom.Text"/>
     <fullyQualifiedTypeName name="java.awt.TextField"/>
     <fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.Label"/>
     <fullyQualifiedTypeName name="java.util.TimerTask"/>
     <fullyQualifiedTypeName name="java.util.Timer"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
@@ -17,4 +16,11 @@
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="gui.utils.Alerts"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+    <fullyQualifiedTypeName name="javafx.scene.image.Image"/>
+    <fullyQualifiedTypeName name="javafx.scene.image.ImageView"/>
+    <fullyQualifiedTypeName name="java.time.DateTimeException"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeParseException"/>
+    <fullyQualifiedTypeName name="java.text.ParseException"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>
