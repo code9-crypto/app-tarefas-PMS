@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="356.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewController">
+   <children>
+      <TabPane layoutX="-1.0" prefHeight="356.0" prefWidth="494.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="TRIBUS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="311.0" prefWidth="494.0">
+                     <children>
+                        <GridPane layoutX="-3.0" layoutY="47.0" prefHeight="198.0" prefWidth="493.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="259.0" text="ORACLE" textAlignment="CENTER">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                                 <padding>
+                                    <Insets left="70.0" right="50.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btInstalaOracle" mnemonicParsing="false" onAction="#onBtInstalarOracle" prefHeight="44.0" prefWidth="246.0" text="INSTALAR / DESINSTALAR" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label prefHeight="35.0" prefWidth="259.0" text="TRIBUS" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <padding>
+                                    <Insets left="70.0" right="50.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" prefWidth="259.0" text="CRYSTAL REPORT" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <padding>
+                                    <Insets left="40.0" right="50.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btInstalaTribus" mnemonicParsing="false" onAction="#onBtInstalarTribus" prefHeight="46.0" prefWidth="246.0" text="INSTALAR / DESINSTALAR" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btInstalaCrystal" mnemonicParsing="false" onAction="#onBtInstalarCrystal" prefHeight="43.0" prefWidth="246.0" text="INSTALAR / DESINSTALAR" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label prefHeight="35.0" prefWidth="259.0" text="CORREÇÃO TRIBUS" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <padding>
+                                    <Insets left="35.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btCorrecaoTribus" mnemonicParsing="false" onAction="#onBtCorrecaoTribus" prefHeight="43.0" prefWidth="246.0" text="INSTALAR / DESINSTALAR" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="SIGSANTOS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="310.0" prefWidth="494.0">
+                     <children>
+                        <GridPane layoutX="4.0" layoutY="19.0" prefHeight="272.0" prefWidth="486.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="44.0" prefWidth="275.0" text="ORACLE">
+                                 <padding>
+                                    <Insets left="80.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btOracleSig" mnemonicParsing="false" onAction="#onBtInstalarOracleSig" prefHeight="59.0" prefWidth="273.0" text="INSTALA / DESINSTALA" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <Label prefHeight="44.0" prefWidth="275.0" text="CRRUNTIME" GridPane.rowIndex="1">
+                                 <padding>
+                                    <Insets left="75.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="44.0" prefWidth="275.0" text="SETUPTECOM" GridPane.rowIndex="2">
+                                 <padding>
+                                    <Insets left="70.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="44.0" prefWidth="275.0" text="EWDECIMALBOX.OCX" GridPane.rowIndex="3">
+                                 <padding>
+                                    <Insets left="30.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="44.0" prefWidth="275.0" text="SETUP" GridPane.rowIndex="4">
+                                 <padding>
+                                    <Insets left="90.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btCrruntimeSig" mnemonicParsing="false" onAction="#onBtInstalarCrruntime" prefHeight="27.0" prefWidth="243.0" text="INSTALA / DESINSTALA" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btSetupTecomSig" mnemonicParsing="false" onAction="#onBtInstalarSetupTecom" prefHeight="27.0" prefWidth="243.0" text="INSTALA / DESINSTALA" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btRegistroSig" mnemonicParsing="false" onAction="#onBtInstalarRegistrar" prefHeight="27.0" prefWidth="243.0" text="REGISTRAR" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btSetupSig" mnemonicParsing="false" onAction="#onBtInstalarSetup" prefHeight="27.0" prefWidth="243.0" text="INSTALA / DESINSTALA" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Label prefHeight="44.0" prefWidth="275.0" text="COPIA P/ DESKTOP PUBLICO" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Button fx:id="btCopiarIcone" mnemonicParsing="false" onAction="#onBtCopiarIcone" prefHeight="27.0" prefWidth="243.0" text="COPIAR" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

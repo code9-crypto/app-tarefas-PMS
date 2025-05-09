@@ -18,24 +18,24 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="328.0" prefWidth="491.0">
                      <children>
-                        <Button fx:id="btnSalvar" layoutX="107.0" layoutY="257.0" mnemonicParsing="false" onAction="#onBtSalvar" prefHeight="75.0" prefWidth="319.0" text="Salvar">
+                        <Button fx:id="btnSalvar" layoutX="107.0" layoutY="290.0" mnemonicParsing="false" onAction="#onBtSalvar" prefHeight="57.0" prefWidth="319.0" text="Salvar">
                            <font>
                               <Font name="Arial Bold Italic" size="30.0" />
                            </font></Button>
-                        <TextField fx:id="txtTarefa" layoutX="187.0" layoutY="59.0" prefHeight="25.0" prefWidth="239.0" />
-                        <TextField fx:id="txtSolicitante" layoutX="187.0" layoutY="126.0" prefHeight="25.0" prefWidth="239.0" />
-                        <TextField fx:id="txtDestino" layoutX="187.0" layoutY="198.0" prefHeight="25.0" prefWidth="239.0" />
-                        <Label layoutX="107.0" layoutY="63.0" text="Tarefa">
+                        <TextField fx:id="txtTarefa" layoutX="187.0" layoutY="47.0" prefHeight="25.0" prefWidth="239.0" />
+                        <TextField fx:id="txtSolicitante" layoutX="187.0" layoutY="110.0" prefHeight="25.0" prefWidth="239.0" />
+                        <TextField fx:id="txtDestino" layoutX="187.0" layoutY="178.0" prefHeight="25.0" prefWidth="239.0" />
+                        <Label layoutX="107.0" layoutY="51.0" text="Tarefa">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="107.0" layoutY="129.0" text="Solicitante">
+                        <Label layoutX="107.0" layoutY="113.0" text="Solicitante">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="107.0" layoutY="201.0" text="Destino">
+                        <Label layoutX="107.0" layoutY="181.0" text="Destino">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -45,6 +45,22 @@
                               <Font name="System Bold Italic" size="14.0" />
                            </font>
                         </Label>
+                        <Label layoutX="107.0" layoutY="224.0" text="Pesquisar região por endereço">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPesquisarEndereco" layoutX="107.0" layoutY="250.0" prefHeight="25.0" prefWidth="350.0" />
+                        <Label fx:id="lblRegiao" layoutX="521.0" layoutY="109.0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnPesquisaRegiao" layoutX="469.0" layoutY="250.0" mnemonicParsing="false" onAction="#onBtPesquisaRegiao" text="Pesquisar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
             </content>
@@ -53,7 +69,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="390.0" prefWidth="730.0">
                      <children>
-                        <Button layoutX="202.0" layoutY="301.0" mnemonicParsing="false" onAction="#onBtConsultar" prefHeight="75.0" prefWidth="319.0" text="Consultar">
+                        <Button fx:id="btnConsultar" layoutX="202.0" layoutY="301.0" mnemonicParsing="false" onAction="#onBtConsultar" prefHeight="75.0" prefWidth="319.0" text="Consultar">
                            <font>
                               <Font name="Arial Bold Italic" size="30.0" />
                            </font>
