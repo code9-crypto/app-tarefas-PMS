@@ -1,12 +1,15 @@
 package gui;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -23,6 +26,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -45,7 +49,9 @@ public class ViewController implements Initializable {
 	@FXML
 	private TextField txtConsultaNome;
 	@FXML
-	private TextField txtPesquisarEndereco;
+	private TextArea txtConversa;
+	@FXML
+	private TextField txtTafChat;
 
 	// Botões
 	@FXML
@@ -53,13 +59,11 @@ public class ViewController implements Initializable {
 	@FXML
 	private Button btnConsultar;
 	@FXML
-	private Button btnPesquisaRegiao;
+	private Button btnVerChat;
 
 	// Labels
 	@FXML
 	private Label lblMensagem;
-	@FXML
-	private Label lblRegiao;
 
 	// Variáveis da tableView
 	@FXML
@@ -184,6 +188,46 @@ public class ViewController implements Initializable {
 		}
 	}
 
+	public void onBtnVerChat() {
+		if( !txtConversa.equals("") ) {
+			txtConversa.clear();
+		}
+		
+		String pasta = "C:\\Users\\r0697537\\AppData\\Local\\harmoniTI\\chat";
+		String tarefa = txtTafChat.getText().replace("/", "_");
+		File path = new File(pasta);
+		File[] files = path.listFiles(File::isFile);
+		String arquivo = "";
+		for( File file : files ) {
+			if( file.getName().substring(0,10).equals(tarefa) ) {
+				arquivo = file.getPath();
+			}
+		}
+		BufferedReader br = null;
+		FileReader fr = null;		
+		try {
+			fr = new FileReader(arquivo);
+			br = new BufferedReader(fr);
+			String line = br.readLine();
+			while (line != null) {
+				txtConversa.appendText(line+"\n");
+				line = br.readLine();							
+			}
+		} catch (IOException e) {
+			System.out.println("Error: " + e.getMessage());
+		} finally {
+			try {
+				if (br != null)
+					br.close();
+				if (fr != null)
+					fr.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}	
+	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// É necessário fazer esses set para fazer a inicialização das colunas na tabela
@@ -193,57 +237,4 @@ public class ViewController implements Initializable {
 		colunaData.setCellValueFactory(new PropertyValueFactory<>("Data"));
 	}
 
-	public void onBtPesquisaRegiao() {
-		String[] vectR4 = new String[] { 
-				"Rua João Pessoa, 246",
-				"Rua João Pessoa, 266",
-				"Rua João Pessoa, 246/266",
-				"Rua Amador Bueno, 249",
-				"Rua Amador Bueno, 225",
-				"Rua Amador Bueno, 446", "Rua Amador Bueno, 237",
-				"R. Vereador Freitas Guimarães, 13",
-				"Rua Sete de Setembro, 34",
-				"Rua Sete de Setembro, 22",
-				"Pça Corrêa de Melo, 42",
-				"R. Uruguai, 37",
-				"Rua da Constituição, 395",
-				"Pça José; Bonifácio, 50",
-				"Rua General Camara, 245",
-				"Rua Andrade Neves, 8",
-				"Av. Cons. Nebias, 199 inclui n&#xBA; 201"
-				};
-
-		String[] vectR5 = new String[] { "Av. Jovino de Mello, 919" };
-
-		String[] vectR6 = new String[] { "Av. Cons. Nébias, 737", "Av. Cons. Nébias, 739",
-				"Av. Cons. Rodrigues Alves, 197", "Rua 28 de Setembro, 201", "Av. Senador Dantas, 410", };
-		
-		if( !txtPesquisarEndereco.getText().equals("") ) {			
-			for (String reg : vectR4) {
-				if( txtPesquisarEndereco.getText().equals(reg) ) {
-					lblRegiao.setText("Região 4");
-					txtPesquisarEndereco.setText("");
-				}
-			}			
-		}
-		
-		if( !txtPesquisarEndereco.getText().equals("") ) {			
-			for (String reg : vectR5) {
-				if( txtPesquisarEndereco.getText().equals(reg) ) {
-					lblRegiao.setText("Região 5");
-					txtPesquisarEndereco.setText("");
-				}
-			}
-		}
-		
-		if( !txtPesquisarEndereco.getText().equals("") ) {
-			for (String reg : vectR6) {
-				if( txtPesquisarEndereco.getText().equals(reg) ) {
-					lblRegiao.setText("Região 6");
-					txtPesquisarEndereco.setText("");
-				}
-			}
-		}
-
-	}
 }
