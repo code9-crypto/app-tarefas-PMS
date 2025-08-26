@@ -23,6 +23,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -76,6 +77,10 @@ public class ViewController implements Initializable {
 	private TableColumn<Tarefas, String> colunaDestino;
 	@FXML
 	private TableColumn<String, String> colunaData;
+	
+	//Variável de data
+	@FXML
+	private DatePicker txtData;
 
 	// Preparando as variaveis do banco
 	Connection conn = null;
@@ -174,6 +179,38 @@ public class ViewController implements Initializable {
 				}
 				table.setItems(listaTarefas);
 				txtConsultaNome.setText("");
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println("Não consegui trazer os dados do bando de dados");
+			} finally {
+				DB.closeResultSet(rs);
+				DB.closeStatement(st);
+				DB.closeStatement(stt);
+				DB.closeConnection();
+			}
+		} else if( txtData.getValue() != null ) {
+			try {
+				conn = DB.getConnection();
+				stt = conn.createStatement();
+				String querySelect = "select tf_tarefa, tf_solicitante, tf_destino, tf_data from tarefas "
+						+ "where tf_data = '" + txtData.getValue() + "'";
+				rs = stt.executeQuery(querySelect);
+				// Declarando uma ObsersableList para receber os dados do banco
+				// OBS.: para isso foi necessário criar uma classe chamada Tarefas
+				ObservableList<Tarefas> listaTarefas = FXCollections.observableArrayList();
+				// Fazendo um loop de repetição para pegar todos os valores e adicionar na
+				// ObservableList
+				while (rs.next()) {
+					// Formatando data que vem do banco de dados
+					Date data = rs.getDate("tf_data");
+					String dataFormatada = sdf.format(data);
+
+					listaTarefas.add(new Tarefas(rs.getString("tf_tarefa"), rs.getString("tf_solicitante"),
+							rs.getString("tf_destino"), dataFormatada));
+				}
+				table.setItems(listaTarefas);
+				System.out.println(listaTarefas);
+				txtData.setValue(null);
 			} catch (SQLException e) {
 				e.printStackTrace();
 				System.out.println("Não consegui trazer os dados do bando de dados");

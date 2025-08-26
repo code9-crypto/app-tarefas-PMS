@@ -58,14 +58,14 @@
 		<item key="FatJarPackageWizardPage.ANTSCRIPT_SAVE" value="false"/>
 		<item key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION" value="C:\Users\r0697537\workspace"/>
 		<item key="FatJarPackageWizardPage.LIBRARY_HANDLING" value="3"/>
-		<item key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME" value="Main (2) - extrator"/>
-		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="C:\Users\r0697537\Desktop\extrator.jar"/>
+		<item key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME" value="Main - appTarefas"/>
+		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="C:\Users\r0697537\Desktop\app-tarefas\app-tarefas.jar"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\r0697537\Desktop\app-tarefas\app-tarefas.jar"/>
 			<item value="C:\Users\r0697537\Desktop\extrator.jar"/>
 			<item value="C:\Users\r0697537\Desktop\instaladoresV2\instaladores.jar"/>
 			<item value="C:\Users\r0697537\Desktop\instaladores\instaladores.jar"/>
 			<item value="C:\Users\r0697537\Desktop\instaladores\app-tarefas.jar"/>
-			<item value="C:\Users\r0697537\Desktop\app-tarefas\app-tarefas.jar"/>
 			<item value="C:\Users\r0697537\Desktop\teste_app\teste.jar"/>
 		</list>
 		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
@@ -96,5 +96,12 @@
 	<section name="RefactoringWizard.preview">
 		<item key="width" value="600"/>
 		<item key="height" value="400"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
+		<item key="GoIntoTopLevelTypeAction.isChecked" value="false"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH" value="600"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT" value="480"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE" value="true"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 	</section>
 </section>
