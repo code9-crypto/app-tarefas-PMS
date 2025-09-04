@@ -40,3 +40,17 @@ Sua funcionalidade é bem simples.
 No campo "Digite o código da tarefa" ela recebe a informação neste formato: 12345/2025; (antes da barra é o número da tarefa e depois da barra é o ano)
 
 Depois clique no botão VER que o campo conversa será preenchido com toda a conversa feita no chat entre ambos.
+
+*****************************************************************************************************************************************************************************************************************
+
+### Instaladores
+Mais uma aplicação para auxílio no dia a dia pelo motivo de fazer com muita frequência essas instalações.
+
+OBS.: É possível fazer isso de forma manual(entrando nas pastas da rede, executando e etc), mas como cada parte fica em um lugar diferente, então apenas centralizei todo processo e com apenas um clique.
+
+Como expliquei antes, o objetivo é bem simples e objetivo INSTALAR A APLICAÇÃO; Contudo, para que esta seja instalada por completo é preciso instalar partes dela e em cada aba está contido tudo isso, conforme as imagens abaixo.
+
+![instaladores1](https://github.com/code9-crypto/app-tarefas-PMS/blob/main/assets/instaladores_pg1.png)
+
+![instaladores2](https://github.com/code9-crypto/app-tarefas-PMS/blob/main/assets/instaladores_pg2.png)
+)
