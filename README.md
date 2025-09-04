@@ -4,7 +4,7 @@
 ## Sobre cada aplicação
 O objetivo foi para facilitar e agilizar meu dia a dia no trabalho. O uso das aplicações são bem simples e as explicarei cada uma por partes.
 
-NOTA: para que todos possam entender o porquê dessas aplicações, eu trabalho na PRODESAN como técnico de informática prestando suporte técnico a todos os servidores da Prefeitura de Santos por meio do sistema SAU(sistema de atendimento ao usuário). Então desenvolvi esses aplicativos para me auxiliar no desenvolvimento do meu trabalho.
+NOTA: para que todos possam entender o porquê dessas aplicações, eu trabalho na PRODESAN como técnico de informática prestando suporte técnico (telefônico e remoto) a todos os servidores da Prefeitura de Santos por meio do sistema SAU(sistema de atendimento ao usuário). Então desenvolvi esses aplicativos para me auxiliar no desenvolvimento do meu trabalho.
 
 
 ### AppTerfas
@@ -53,4 +53,33 @@ Como expliquei antes, o objetivo é bem simples e objetivo INSTALAR A APLICAÇÃ
 ![instaladores1](https://github.com/code9-crypto/app-tarefas-PMS/blob/main/assets/instaladores_pg1.png)
 
 ![instaladores2](https://github.com/code9-crypto/app-tarefas-PMS/blob/main/assets/instaladores_pg2.png)
-)
+
+*****************************************************************************************************************************************************************************************************************
+
+## Tecnologias Usadas
+JAVA (junto com a biblioteca FX);
+
+Banco de dados: MySQL (XAMPP instalado localmente)
+
+*****************************************************************************************************************************************************************************************************************
+
+## Como executar as aplicações
+OBS.: toda a estrutura da pasta deverá estar dentro da raiz do sistema para que possa funcionar( C:/ )
+
+1º - Abra o código fonte na IDE de sua prefêrencia;
+
+2º - Exporte o projeto como "Runnable JAR";
+
+3º - Crie um estrutura de pastas igual a esta:
+
+![estrutura_pastas](https://github.com/code9-crypto/app-tarefas-PMS/blob/main/assets/executando_aplica%C3%A7%C3%A3o.png)
+
+Quando projeto for exportado, você terá algumas pastas ja prontas como a lib, sdk e o executável java(o qual você não deve executá-lo, pois ele não funcionará). A pasta jdk é o kit de desenvolvimento(neste caso estou usando o zulu17.52.17-ca-jdk17.0.12-win_x64)
+
+A imagem não de tanta importância, pois será usada como ícone no canto esquerdo suporior da janela.
+
+Agora o último arquivo( que é um bat ), este sim é o executável do programa e deverá ter essas linhas de código:
+
+![codigo_bat](https://github.com/code9-crypto/app-tarefas-PMS/blob/main/assets/codigo_bat_java.png)
+
+Bem simple e breve do que está acontecendo aqui. O programa vai buscar o JDK, SDK e executável(JAVA - classe principal) no caminho descrito para executá-lo
