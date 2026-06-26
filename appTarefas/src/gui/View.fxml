@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
@@ -65,18 +66,18 @@
                               <Font name="Arial Bold Italic" size="30.0" />
                            </font>
                         </Button>
-                        <Label layoutX="19.0" layoutY="14.0" text="Digite o código da tarefa">
+                        <Label layoutX="19.0" layoutY="14.0" text="Número da tarefa">
                            <font>
                               <Font name="System Bold Italic" size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtConsultaCodigo" layoutX="19.0" layoutY="34.0" prefHeight="25.0" prefWidth="169.0" />
-                        <Label layoutX="491.0" layoutY="12.0" text="Digite o nome do solicitante">
+                        <TextField fx:id="txtConsultaCodigo" layoutX="18.0" layoutY="34.0" prefHeight="25.0" prefWidth="116.0" />
+                        <Label layoutX="353.0" layoutY="13.0" text="Nome do Solicitante">
                            <font>
                               <Font name="System Bold Italic" size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtConsultaNome" layoutX="491.0" layoutY="32.0" prefHeight="25.0" prefWidth="186.0" />
+                        <TextField fx:id="txtConsultaNome" layoutX="351.0" layoutY="35.0" prefHeight="25.0" prefWidth="138.0" />
                         <TableView fx:id="table" layoutX="19.0" layoutY="83.0" prefHeight="200.0" prefWidth="660.0">
                           <columns>
                             <TableColumn fx:id="colunaTarefa" prefWidth="75.0" text="Tarefa" />
@@ -85,12 +86,18 @@
                               <TableColumn fx:id="colunaData" prefWidth="75.0" text="Data" />
                           </columns>
                         </TableView>
-                        <Label layoutX="255.0" layoutY="14.0" text="Digite a data da tarefa">
+                        <Label layoutX="191.0" layoutY="13.0" text="Data da tarefa">
                            <font>
                               <Font name="System Bold Italic" size="14.0" />
                            </font>
                         </Label>
-                        <DatePicker fx:id="txtData" layoutX="243.0" layoutY="34.0" />                        
+                        <DatePicker fx:id="txtData" layoutX="184.0" layoutY="34.0" prefHeight="25.0" prefWidth="121.0" />
+                        <Label layoutX="574.0" layoutY="12.0" text="Regiões">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbRegioes" layoutX="525.0" layoutY="34.0" prefWidth="150.0" />                        
                      </children>
                   </AnchorPane>
             </content>

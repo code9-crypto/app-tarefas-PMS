@@ -11,7 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import classes.Tarefas;
@@ -23,6 +25,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -65,6 +68,10 @@ public class ViewController implements Initializable {
 	// Labels
 	@FXML
 	private Label lblMensagem;
+	
+	// Combo
+	@FXML
+	private ComboBox<String> cmbRegioes;
 
 	// Variáveis da tableView
 	@FXML
@@ -82,12 +89,16 @@ public class ViewController implements Initializable {
 	@FXML
 	private DatePicker txtData;
 
+
 	// Preparando as variaveis do banco
 	Connection conn = null;
 	PreparedStatement st = null;
 	Statement stt = null;
 	ResultSet rs = null;
 
+	
+	//****ACÕES DOS BOTÕES****
+	
 	public void onBtSalvar() {
 		try {
 			// Iniciando a conexão
@@ -220,6 +231,37 @@ public class ViewController implements Initializable {
 				DB.closeStatement(stt);
 				DB.closeConnection();
 			}
+		} else if(cmbRegioes.getSelectionModel().getSelectedItem() != null || cmbRegioes.getSelectionModel().getSelectedItem() != "" ){
+			try {
+				conn = DB.getConnection();
+				stt = conn.createStatement();
+				String querySelect = "SELECT * from tarefas where tf_destino like '%"+ cmbRegioes.getSelectionModel().getSelectedItem() +"%' order by tf_data DESC;";						
+				rs = stt.executeQuery(querySelect);
+				// Declarando uma ObsersableList para receber os dados do banco
+				// OBS.: para isso foi necessário criar uma classe chamada Tarefas
+				ObservableList<Tarefas> listaTarefas = FXCollections.observableArrayList();
+				// Fazendo um loop de repetição para pegar todos os valores e adicionar na
+				// ObservableList
+				while (rs.next()) {
+					// Formatando data que vem do banco de dados
+					Date data = rs.getDate("tf_data");
+					String dataFormatada = sdf.format(data);
+
+					listaTarefas.add(new Tarefas(rs.getString("tf_tarefa"), rs.getString("tf_solicitante"),
+							rs.getString("tf_destino"), dataFormatada));
+				}
+				
+				table.setItems(listaTarefas);				
+				cmbRegioes.setValue(null);
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println("Não consegui trazer os dados do bando de dados");
+			} finally {
+				DB.closeResultSet(rs);
+				DB.closeStatement(st);
+				DB.closeStatement(stt);
+				DB.closeConnection();
+			}
 		} else {
 			Alerts.showAlert("Informação", null, "Preencha um dos campos para fazer a pesquisa", AlertType.INFORMATION);
 		}
@@ -236,9 +278,10 @@ public class ViewController implements Initializable {
 		File[] files = path.listFiles(File::isFile);
 		String arquivo = "";
 		for( File file : files ) {
-			if( file.getName().substring(0,10).equals(tarefa) ) {
+			if( file.getName().substring(0, file.getName().indexOf(".")).equals(tarefa) ) {
 				arquivo = file.getPath();
-			}
+				System.out.println(file);
+			}			
 		}
 		BufferedReader br = null;
 		FileReader fr = null;		
@@ -262,7 +305,38 @@ public class ViewController implements Initializable {
 				e.printStackTrace();
 			}
 		}
-	}	
+	}
+	
+	
+	//****FUNÇÕES SEPARADAS DOS BOTÕES*****
+	
+	//Esta função irá receber todas as regiões do banco de dados para preencher a combo box assim que a aplicação for iniciada
+	private void recuperaRegioes() {
+		try {
+			
+			//Conexão com o banco
+			conn = DB.getConnection();
+			stt = conn.createStatement();
+			
+			//Query que retornará apenas as regiões
+			String querySelectRegioes = "SELECT DISTINCT(tf_destino) from tarefas where tf_destino like 'Região%' order by tf_destino;";
+			rs = stt.executeQuery(querySelectRegioes);
+			
+			//Esta lista será usada para armezanar todas as regiões a fim de de alimentar a combo box
+			List<String> regioes = new ArrayList<>();
+			while(rs.next()) {
+				regioes.add(rs.getString("tf_destino"));
+			}
+			
+			//Alimentando a combo box com a lista que foi preenchida acima
+			cmbRegioes.getItems().addAll(regioes);			
+			
+		}catch(SQLException sqlE) {
+			sqlE.printStackTrace();
+			System.out.println("Não consegui trazer os dados do bando de dados");
+		}
+		
+	}
 	
 
 	@Override
@@ -272,6 +346,7 @@ public class ViewController implements Initializable {
 		colunaSolicitante.setCellValueFactory(new PropertyValueFactory<>("Solicitante"));
 		colunaDestino.setCellValueFactory(new PropertyValueFactory<>("Destino"));
 		colunaData.setCellValueFactory(new PropertyValueFactory<>("Data"));
+		recuperaRegioes();
 	}
 
 }
